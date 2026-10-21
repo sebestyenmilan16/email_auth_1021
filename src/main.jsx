@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage.jsx'
 import LoginPage from './pages/LoginPage.jsx'
 import ForgotPasswordPage from './pages/ForgotPasswordPage.jsx'
 import NotFoundPage from './pages/NotFoundPage.jsx'
+import ProfilePage from './pages/ProfilePage.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -16,6 +17,7 @@ createRoot(document.getElementById('root')).render(
           <Route index element={<HomePage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="forgot-password" element={<ForgotPasswordPage />} />
+          <Route path="profile" element={<ProfilePage/>} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

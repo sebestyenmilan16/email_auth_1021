@@ -9,6 +9,7 @@ app.post('/login', (req,res)=>{
     const {email='', password=''} = req.body
     // TODO - query database
     return res.status(200).json({
+        loggedIn: true,
         message: 'Logged in!'
     })
 })
