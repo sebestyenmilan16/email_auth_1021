@@ -1,42 +1,48 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.app { min-height: 100vh; display: flex; flex-direction: column; }
+.navbar {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px; padding: 0 24px;
+  background: #0f2a4a; color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.brand { display: flex; align-items: center; color: #fff; }
+.brand:hover, .brand:focus-visible { color: #bfdbfe; outline: none; }
+.user-menu { position: relative; }
+.avatar-btn {
+  width: 40px; height: 40px; padding: 0; border: 2px solid #94a3b8;
+  border-radius: 50%; background: none; cursor: pointer; overflow: hidden;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.avatar-btn:hover, .avatar-btn:focus-visible { border-color: #fff; outline: none; }
+.avatar-btn img { width: 100%; height: 100%; display: block; }
+.dropdown {
+  position: absolute; right: 0; top: calc(100% + 10px);
+  min-width: 160px; margin: 0; padding: 6px 0; list-style: none;
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(15, 42, 74, .18);
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.dropdown button {
+  width: 100%; padding: 10px 16px; border: 0; background: none;
+  text-align: left; font: inherit; color: #1e293b; cursor: pointer;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
+.dropdown button:hover, .dropdown button:focus-visible { background: #eef2f7; outline: none; }
+.content { flex: 1; padding: 32px 24px; max-width: 960px; width: 100%; margin: 0 auto; }
 .card {
-  padding: 2em;
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
+  padding: 24px 28px; box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
 }
-
-.read-the-docs {
-  color: #888;
+.card h1 { margin: 0 0 8px; font-size: 1.5rem; color: #0f2a4a; }
+.card p { margin: 0; color: #475569; line-height: 1.5; }
+.card.narrow { max-width: 420px; margin: 0 auto; }
+.muted { color: #475569; }
+.card a { color: #1d4ed8; }
+.form { display: flex; flex-direction: column; gap: 16px; margin: 16px 0; }
+.form label { display: flex; flex-direction: column; gap: 6px; font-size: .9rem; font-weight: 500; }
+.form input {
+  padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font: inherit;
 }
+.form input:focus { outline: 2px solid #93c5fd; border-color: #1d4ed8; }
+button.primary {
+  padding: 10px 16px; border: 0; border-radius: 6px; background: #1d4ed8;
+  color: #fff; font: inherit; font-weight: 600; cursor: pointer;
+}
+button.primary:hover { background: #1e40af; }
