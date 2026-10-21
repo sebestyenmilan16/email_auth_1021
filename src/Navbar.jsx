@@ -41,7 +41,7 @@ export default function Navbar({ loggedIn, onLogin, onLogout }) {
           aria-label="User menu"
           onClick={() => setOpen(!open)}
         >
-          <img src="/user.svg" alt="" />
+          🧑🏻
         </button>
         {open && (
           <ul className="dropdown" role="menu">
