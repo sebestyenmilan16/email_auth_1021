@@ -10,7 +10,10 @@ export default function App() {
     <div className="app">
       <Navbar
         loggedIn={loggedIn}
-        onLogin={() => navigate('/login')}
+        onLogin={() =>{
+          //setLoggedIn(true)
+          navigate('/login')}
+        } 
         onLogout={() => {
           setLoggedIn(false)
           navigate('/login')
