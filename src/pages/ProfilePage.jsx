@@ -1,5 +1,12 @@
+import { useNavigate, useOutletContext } from "react-router-dom"
+
 export default function ProfilePage() {
+
+    const {loggedIn, email} = useOutletContext()
+    const navigate = useNavigate()
+
     return <div className="card">
-        Congratulations for logging in!
+        {loggedIn && <p>Congratulations for logging in, {email}!</p>}
+        {!loggedIn && navigate('/login')}
     </div>
 }

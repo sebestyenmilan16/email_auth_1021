@@ -5,11 +5,13 @@ import './App.css'
 
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false)
+  const [email, setEmail] = useState('')
   const navigate = useNavigate()
   return (
     <div className="app">
       <Navbar
         loggedIn={loggedIn}
+        email={email}
         onLogin={() =>{
           //setLoggedIn(true)
           navigate('/login')}
@@ -20,7 +22,7 @@ export default function App() {
         }}
       />
       <main className="content">
-        <Outlet />
+        <Outlet context={{loggedIn, setLoggedIn, email, setEmail}} />
       </main>
     </div>
   )

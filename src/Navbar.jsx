@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 
-export default function Navbar({ loggedIn, onLogin, onLogout }) {
+export default function Navbar({ loggedIn, onLogin, onLogout, email ,setEmail }) {
   const [open, setOpen] = useState(false)
   const ref = useRef(null)
 
@@ -20,7 +20,7 @@ export default function Navbar({ loggedIn, onLogin, onLogout }) {
   }, [])
 
   const act = (fn) => () => {
-    fn()
+    fn(email)
     setOpen(false)
   }
 
