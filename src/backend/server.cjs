@@ -28,11 +28,23 @@ app.post('/login', (req,res)=>{
             }
             else {
                 console.log('result ',result)
-                return res.status(200).json({
+
+                if (result.length > 0) {
+                    return res.status(200).json({
                     loggedIn: true,
                     message: 'Logged in!',
                     result
-                })
+                    })
+                }
+
+                else {
+                    return res.status(401).json({
+                        loggedIn: false,
+                        message: 'Bad email or password',
+                        result
+                    })
+                }
+                
                 
             }
            
