@@ -31,10 +31,16 @@ export default function LoginPage(props) {
           outletContext.setLoggedIn(true)
           outletContext.setEmail(email)
           navigate('/profile')
-        } 
+        }
+        else {
+          // Rossz adatok esetén
+          
+        }
+        
       }
       else {
         console.warn(res.statusText)
+        alert('Rossz email vagy jelszó, kérlek próbáld újra.')
         
       }
     })
